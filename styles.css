@@ -3,6 +3,7 @@
     margin-left: 2vw;
 }
 
+
 body {
     background: linear-gradient(180deg, #d0e0f7, white, #d0e0f7);
   background-size: 400% 400%;
@@ -16,6 +17,86 @@ body {
     padding: 0;
     text-shadow: 2px 2px 4px #9EB6EE; /* Add drop shadow to all text */
 }
+
+.marquee-top, .marquee-bottom {
+    position: absolute;
+    white-space: nowrap;
+    font-size: 24px;
+    color: #9EB6EE;
+    z-index: 10;
+    top: 15vw;
+    background-color: white;
+    border: solid 0.2vw #9EB6EE;
+    animation: moveText 40s linear infinite;
+  }
+  
+  .marquee-top {
+   margin-top: 18vw; /* Initial position for the top marquee */
+    left: 0;
+    animation: moveText 70s linear infinite;
+  }
+  
+  .marquee-bottom {
+    margin-top: 52vw; /* Position this one 100px below the first marquee */
+    right: 0; /* Start on the right side */
+    animation: moveTextBottom 60s linear infinite;
+  }
+  
+  /* Top marquee animation: left to right, then right to left, with a 10vw shift */
+  @keyframes moveText {
+    0% {
+      transform: translateX(-100%); /* Start off-screen to the left */
+      top: 20px; /* Initial vertical position */
+    }
+    25% {
+      transform: translateX(100vw); /* Move all the way to the right */
+      top: 20px; /* Stay at the same vertical position */
+    }
+    50% {
+      transform: translateX(100vw); /* Keep the text off-screen to the right */
+      top: 20px; /* Still stay at the original position */
+    }
+    51% {
+      transform: translateX(100vw); /* Keep it at the right side */
+      top: calc(20px + 10vw); /* Move 10vw lower after the first loop */
+    }
+    75% {
+      transform: translateX(-100vw); /* Move all the way to the left */
+      top: calc(20px + 10vw); /* Keep the new lower vertical position */
+    }
+    100% {
+      transform: translateX(-100%); /* Back off-screen to the left */
+      top: calc(20px + 10vw); /* Stay at the 10vw lower position */
+    }
+  }
+  
+  /* Bottom marquee animation: right to left, then left to right, with a 10vw shift */
+  @keyframes moveTextBottom {
+    0% {
+      transform: translateX(100%); /* Start off-screen to the right */
+      top: 100px; /* Initial vertical position */
+    }
+    25% {
+      transform: translateX(-100vw); /* Move all the way to the left */
+      top: 100px; /* Stay at the same vertical position */
+    }
+    50% {
+      transform: translateX(-100vw); /* Keep the text off-screen to the left */
+      top: 100px; /* Still stay at the original position */
+    }
+    51% {
+      transform: translateX(-100vw); /* Keep it at the left side */
+      top: calc(100px + 10vw); /* Move 10vw lower after the first loop */
+    }
+    75% {
+      transform: translateX(100vw); /* Move all the way to the right */
+      top: calc(100px + 10vw); /* Keep the new lower vertical position */
+    }
+    100% {
+      transform: translateX(100%); /* Back off-screen to the right */
+      top: calc(100px + 10vw); /* Stay at the 10vw lower position */
+    }
+  }
 
 @keyframes waveAnimation {
     0% {
