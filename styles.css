@@ -33,13 +33,13 @@ body {
   .marquee-top {
    margin-top: 18vw; /* Initial position for the top marquee */
     left: 0;
-    animation: moveText 70s linear infinite;
+    animation: moveText 80s linear infinite;
   }
   
   .marquee-bottom {
     margin-top: 52vw; /* Position this one 100px below the first marquee */
     right: 0; /* Start on the right side */
-    animation: moveTextBottom 60s linear infinite;
+    animation: moveTextBottom 70s linear infinite;
   }
   
   /* Top marquee animation: left to right, then right to left, with a 10vw shift */
