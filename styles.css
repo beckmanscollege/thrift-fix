@@ -1,0 +1,261 @@
+.title {
+    font-size: 10vw;
+    margin-left: 2vw;
+}
+
+body {
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 4vw;
+    background-color: #EDF2FF;
+    color: #9EB6EE;
+    min-height: 96vh; /* 100vh - 2vw top - 2vw bottom */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-shadow: 2px 2px 4px #9EB6EE; /* Add drop shadow to all text */
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #9EB6EE;
+    padding: 5px;
+    text-align: left;
+    color: #9EB6EE;
+    text-shadow: 2px 2px 4px #9EB6EE; /* Add drop shadow to all text */
+}
+
+/* Base image styling - common properties for all images */
+img {
+    margin-right: 5px;
+    object-fit: contain;
+}
+
+/* Default column image styling - applied to most columns */
+.default-column-img {
+    filter: grayscale(1);
+    border: 1px solid #9EB6EE;
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Special styling for F column images */
+.column-f-image {
+    max-width: 10vw;
+    max-height: 10vw;
+    filter: grayscale(0) !important; /* No grayscale - show in color */
+    border: none !important; /* Remove border for F column images */
+    box-shadow: none; /* No shadow */
+    margin: 5px; /* Add some margin instead of border */
+    cursor: default; /* Override the pointer cursor */
+    animation: blink 1.2s infinite; /* Add blinking animation */
+}
+
+/* Blinking animation for F column images */
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Special styling for A column images */
+.a-column-img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: solid 0.3vw #9EB6EE;
+    box-shadow: 2px 2px 4px #9EB6EE; /* Add drop shadow */
+}
+
+.a-column-img.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.a-column-img.hover overlay {
+    opacity:0.5;
+}
+
+a {
+    color: #9EB6EE;
+    text-decoration: none;
+    border-bottom: 1px dotted #9EB6EE;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    word-break: break-all;
+    text-shadow: 2px 2px 4px #9EB6EE; /* Add drop shadow to all text */
+}
+
+a:hover {
+    color: #7A93DB;
+    border-bottom: 1px solid #9EB6EE;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #EDF2FF;
+    z-index: 1000;
+    justify-content: left;
+    align-items: center;
+    cursor: pointer;
+    border-top: solid 4vw #9EB6EE;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    background-color: #EDF2FF;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 80%;
+    max-height: 80%;
+}
+
+#modalImage {
+    width: 38vw;
+    height: 38vw;
+    object-fit: contain;
+    filter: grayscale(0);
+    border: none;
+    margin-left: 2.5vw;
+    margin-top: -2.5vw;
+    cursor: default;
+    border: solid 0.3vw #9EB6EE;
+    box-shadow: 2px 2px 4px #9EB6EE;
+}
+
+/* Column-specific styling */
+/* All columns A through Z */
+.A, .B, .C, .D, .E, .F, .G, .H, .I, .J, .K, .L, .M, .N, .O, .P, .Q, .R, .S, .T, .U, .V, .W, .X, .Y, .Z {
+    /* Default styling for all columns */
+}
+
+/* Row-specific styling can be added here */
+/* Example: .row-1, .row-2, etc. */
+
+/* Modal display state */
+.modal-visible {
+    display: flex !important;
+}
+
+/* Utility classes for JavaScript */
+.hidden {
+    display: none !important;
+}
+
+.visible {
+    display: block !important;
+}
+
+/* Cell text styling */
+.cell-text {
+    margin-bottom: 5px;
+    word-break: break-word;
+    text-shadow: 2px 2px 4px #9EB6EE; /* Add drop shadow to all text */
+}
+
+/* Error handling for images */
+.fallback-link {
+    display: inline-block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    body {
+        font-size: 4vw;
+    }
+    
+    
+    
+    img.hover-effect {
+        transform: scale(5);
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 5vw;
+    }
+    
+    
+    img {
+        max-width: 60px;
+        max-height: 60px;
+    }
+    
+    img.hover-effect {
+        transform: scale(4);
+    }
+    
+    td, th {
+        padding: 3px;
+    }
+}
+
+.a-column-img.clicked {
+    border: 2px solid #000;
+    padding-bottom: 20px;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.5vw;
+    padding: 2vw;
+}
+
+.row-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: #EDF2FF;
+margin-left: 4.5vw;
+    border-radius: 5px;
+    max-width: 90vw;
+    line-height: 9vw;
+    margin-top: -2vw; /* Increase line height */
+}
+
+.f-column-img {
+    animation: blink 1.5s infinite;
+    width: 20vw;
+    margin-left: 1.5vw;
+    margin-top: -1.2vw;
+}
+
+.sort-text {
+    grid-column: span 2;
+    font-family: 'Pixelify Sans', sans-serif;
+    font-size: 9vw;
+    text-align: left;
+    margin: 20px 0;
+    color: #9EB6EE;
+    cursor: pointer;
+    margin-top: -0.5vw;
+    text-shadow: 2px 2px 4px #9EB6EE; /* Add drop shadow to all text */
+}
+
+body, h1, h2, h3, h4, h5, h6, p, span, div {
+    text-shadow: 2px 2px 4px #9EB6EE; /* Add drop shadow to all text */
+}
