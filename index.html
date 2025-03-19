@@ -17,21 +17,7 @@
             font-style: normal;
         }
 
-        /* ... existing styles ... */
-        #asciiCanvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -2; /* Behind the ASCII art */
-            font-family: 'Pixelify Sans', monospace; /* Use Pixelify Sans font */
-            font-size: 8vw; /* Smaller font size for higher resolution */
-            color:#9EB6EE; /* ASCII character color */
-            text-shadow: 2px 2px 4px #9EB6EE; /* Add drop shadow */
-            overflow: visible;
-            line-height: 5.5vw; /* Increase line height */
-        }
+    
 
         .close-button {
             position: absolute;
@@ -44,25 +30,12 @@
             z-index: 1000;
             text-shadow: 2px 2px 4px #9EB6EE; /* Add drop shadow */
         }
-        .ascii-art {
-            font-family: 'Pixelify Sans', sans-serif;
-            white-space: pre;
-            position: absolute;
-            top: -8vw;
-            left: -3vw;;
-            width: 100%;
-            height: auto;
-            overflow: visible;
-            z-index: -1;
-            color: white;
-            line-height: 1.2;
-            text-shadow: 2px 2px 4px #9EB6EE; /* Add drop shadow */
-        }
     </style>
 </head>
 <body>
 
-    <div class="title"> thrift fix ⋅˚₊‧*‧₊˚ ⋅</div>
+    <div class="title"> thrift fix</div>
+
 
     <div class="marquee-top">
         <p>I have space in my closet to fill...</p>
@@ -70,6 +43,10 @@
     
       <div class="marquee-bottom">
         <p>I could use a new pair of jeans...</p>
+      </div>
+
+      <div class="marquee-bottom-2">
+        <p>My CSN will cover it...</p>
       </div>
 
     <div id="output"></div>
@@ -206,7 +183,7 @@
                                     const fImgContainer = document.createElement("div");
                                     fImgContainer.style.display = "flex"; // Ensure side-by-side display
                                     const fLabel = document.createElement("strong");
-                                    fLabel.textContent = "Rating: ";
+                                    fLabel.textContent = "rating: ";
                                     const fImg = document.createElement("img");
                                     fImg.src = cleanFUrl;
                                     fImg.alt = "Rating content";
@@ -288,6 +265,7 @@
             output.appendChild(gridContainer);
         }
 
+        
     </script>
 
 </body>
