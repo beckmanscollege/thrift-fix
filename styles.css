@@ -188,7 +188,7 @@ td, th {
 
 @keyframes color-change {
     0% {color: #9EB6EE; }
-    50% {color: rgb(251, 96, 96); }
+    50% {color: rgb(255, 255, 255); }
     100% { color: #9EB6EE; }
 }
 
