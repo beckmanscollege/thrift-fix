@@ -1,6 +1,7 @@
 .title {
     font-size: 10vw;
     margin-left: 2vw;
+    text-align: center;
 }
 
 
@@ -227,13 +228,14 @@ a:hover {
     align-items: flex-start;
     justify-content: center;
     position: relative;
-    background: linear-gradient(180deg, #d0e0f7, white, #d0e0f7);
+    background: linear-gradient(180deg, #d0e0f7, white, #d0e0f7) opacity 0;
   background-size: 400% 400%;
-  animation: waveAnimation 5s ease-in-out infinite;
     padding: 20px;
     border-radius: 5px;
     max-width: 80%;
     max-height: 80%;
+    margin-left: 3vw;
+    margin-top: -0.5vw;
 }
 
 #modalImage {
@@ -242,7 +244,7 @@ a:hover {
     object-fit: contain;
     filter: grayscale(0);
     border: none;
-    margin-left: 2.5vw;
+    margin-left: 3vw;
     margin-top: -2.5vw;
     cursor: default;
     border: solid 0.3vw #9EB6EE;
@@ -287,17 +289,12 @@ a:hover {
     text-overflow: ellipsis;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
     body {
         font-size: 4vw;
     }
     
     
-    
-    img.hover-effect {
-        transform: scale(5);
-    }
 }
 
 @media (max-width: 480px) {
@@ -311,9 +308,6 @@ a:hover {
         max-height: 60px;
     }
     
-    img.hover-effect {
-        transform: scale(4);
-    }
     
     td, th {
         padding: 3px;
