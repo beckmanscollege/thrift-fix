@@ -383,12 +383,12 @@ a:hover {
     font-family: 'Pixelify Sans', sans-serif;
     font-size: 9vw;
     text-align: left;
-    margin: 20px 0;
     color: #9EB6EE;
     cursor: pointer;
     margin-top: -0.8vw;
     text-shadow: 2px 2px 4px #9EB6EE;
     animation: color-change 1.5s infinite;
+    align-items: top;
 }
 
 body, h1, h2, h3, h4, h5, h6, p, span, div {
