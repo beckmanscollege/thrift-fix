@@ -21,7 +21,7 @@
 }
 
 #loading-image {
-    width: 200px; /* Set image size as needed */
+    width: 30vw; /* Set image size as needed */
     height: auto;
     cursor: pointer; /* Make it clear it's clickable */
 }
@@ -182,9 +182,14 @@ td, th {
 /* Blinking animation for F column images */
 @keyframes blink {
     0% { opacity: 1; }
-    40% { opacity: 0; }
-    60% {opacity: 0;}
+    50% { opacity: 0; }
     100% { opacity: 1; }
+}
+
+@keyframes color-change {
+    0% {color: #9EB6EE; }
+    50% {color: rgb(251, 96, 96); }
+    100% { color: #9EB6EE; }
 }
 
 /* Special styling for A column images */
@@ -358,7 +363,7 @@ a:hover {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-margin-left: 4.5vw;
+    margin-left: 4.5vw;
     border-radius: 5px;
     line-height: 9vw;
     margin-top: -2vw; /* Increase line height */
@@ -381,9 +386,9 @@ margin-left: 4.5vw;
     margin: 20px 0;
     color: #9EB6EE;
     cursor: pointer;
-    margin-top: -0.5vw;
+    margin-top: -0.8vw;
     text-shadow: 2px 2px 4px #9EB6EE;
-    animation: blink 1.6s infinite;
+    animation: color-change 1.5s infinite;
 }
 
 body, h1, h2, h3, h4, h5, h6, p, span, div {
