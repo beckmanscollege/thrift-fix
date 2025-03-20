@@ -1,14 +1,40 @@
 .title {
     font-size: 10vw;
-    margin-left: 2vw;
-    text-align: center;
+    margin-left: 5.5vw;
+    text-align: left;
+}
+
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #d0e0f7, white, #d0e0f7, pink);
+  background-size: 400% 400%;
+  animation: waveAnimation 8s ease-in-out infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+}
+
+#loading-image {
+    width: 200px; /* Set image size as needed */
+    height: auto;
+    cursor: pointer; /* Make it clear it's clickable */
+}
+
+img {
+    transition: opacity 0.5s ease; /* Smooth transition for image change */
 }
 
 
 body {
-    background: linear-gradient(180deg, #d0e0f7, white, #d0e0f7);
+    background: linear-gradient(180deg, #d0e0f7, white, #d0e0f7, pink);
   background-size: 400% 400%;
-  animation: waveAnimation 5s ease-in-out infinite;
+  animation: waveAnimation 8s ease-in-out infinite;
     font-family: "Pixelify Sans", sans-serif;
     font-size: 4vw;
     color: #9EB6EE;
@@ -17,12 +43,13 @@ body {
     margin: 0;
     padding: 0;
     text-shadow: 2px 2px 4px #9EB6EE;
+    border: solid white 2vw;
 }
 
 .marquee-top, .marquee-bottom, .marquee-bottom-2 {
     position: absolute;
     white-space: nowrap;
-    font-size: 24px;
+    font-size: 1.2vw;
     color: #9EB6EE;
     z-index: 10;
     top: 15vw;
@@ -33,19 +60,19 @@ body {
   }
   
   .marquee-top {
-   margin-top: 18vw;
+   margin-top: 25vw;
     left: 0;
     animation: moveText 80s linear infinite;
   }
   
   .marquee-bottom {
-    margin-top: 52vw; 
+    margin-top: 63vw; 
     right: 0; 
     animation: moveTextBottom 70s linear infinite;
   }
 
   .marquee-bottom-2 {
-margin-top: 71vw;
+margin-top: 126vw;
 left: 0;
 animation: moveText 80s linear infinite;
   }
@@ -131,11 +158,6 @@ td, th {
     text-shadow: 2px 2px 4px #9EB6EE; /* Add drop shadow to all text */
 }
 
-/* Base image styling - common properties for all images */
-img {
-    margin-right: 5px;
-    object-fit: contain;
-}
 
 /* Default column image styling - applied to most columns */
 .default-column-img {
@@ -160,7 +182,8 @@ img {
 /* Blinking animation for F column images */
 @keyframes blink {
     0% { opacity: 1; }
-    50% { opacity: 0; }
+    40% { opacity: 0; }
+    60% {opacity: 0;}
     100% { opacity: 1; }
 }
 
@@ -171,23 +194,22 @@ img {
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: solid 0.3vw #9EB6EE;
-    box-shadow: 2px 2px 4px #9EB6EE; /* Add drop shadow */
+    box-shadow: 2px 2px 4px #9EB6EE;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
 }
-
-.a-column-img.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
+  
+  .a-column-img img {
     width: 100%;
     height: 100%;
-    background-color: white;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
+    object-fit: cover;
+  }
+  
+  .a-column-img:hover {
+    transform: scale(1.1); /* Optional: Add hover effect to the image */
+  }
 
-.a-column-img.hover overlay {
-    opacity:0.5;
-}
+
 
 a {
     color: #9EB6EE;
@@ -218,7 +240,6 @@ a:hover {
     justify-content: left;
     align-items: center;
     cursor: pointer;
-    border-top: solid 4vw #9EB6EE;
     border-radius: 10px;
 }
 
@@ -249,6 +270,7 @@ a:hover {
     cursor: default;
     border: solid 0.3vw #9EB6EE;
     box-shadow: 2px 2px 4px #9EB6EE;
+    border-radius: 10px;
 }
 
 /* Column-specific styling */
@@ -319,11 +341,17 @@ a:hover {
     padding-bottom: 20px;
 }
 
+.a-column-img.hover {
+    width: 120%
+}
+
 .image-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 2.5vw;
-    padding: 2vw;
+    padding: 3vw;
+    width: 80vw;
+    margin-left: 4.5vw;
 }
 
 .row-data {
@@ -332,7 +360,6 @@ a:hover {
     justify-content: flex-start;
 margin-left: 4.5vw;
     border-radius: 5px;
-    max-width: 90vw;
     line-height: 9vw;
     margin-top: -2vw; /* Increase line height */
     padding-right: 3vw;
@@ -355,7 +382,8 @@ margin-left: 4.5vw;
     color: #9EB6EE;
     cursor: pointer;
     margin-top: -0.5vw;
-    text-shadow: 2px 2px 4px #9EB6EE; /* Add drop shadow to all text */
+    text-shadow: 2px 2px 4px #9EB6EE;
+    animation: blink 1.6s infinite;
 }
 
 body, h1, h2, h3, h4, h5, h6, p, span, div {

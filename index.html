@@ -34,6 +34,12 @@
 </head>
 <body>
 
+    <div id="loading-screen">
+        <img id="loading-image" src="image1.jpg" alt="OPEN" />
+
+        <audio id="loading-sound" src="https://cdn.glitch.global/87bdc027-1100-455e-a926-b9392b3014b9/170598__alkanetexe__anime-sword-sfx%20(1).wav?v=1742475568398" preload="auto"></audio>
+    </div>
+
     <div class="title"> thrift fix</div>
 
 
@@ -46,8 +52,11 @@
       </div>
 
       <div class="marquee-bottom-2">
-        <p>My CSN will cover it...</p>
+        <p>But it's on sale...</p>
       </div>
+
+      <audio id="hover-sound" src="https://cdn.glitch.global/87bdc027-1100-455e-a926-b9392b3014b9/457306__1urker__anime.wav?v=1742482383621" preload="auto"></audio>
+      <audio id="click-sound" src="https://cdn.glitch.global/87bdc027-1100-455e-a926-b9392b3014b9/170598__alkanetexe__anime-sword-sfx%20(1).wav?v=1742475568398" preload="auto"></audio>
 
     <div id="output"></div>
     
@@ -265,6 +274,58 @@
             output.appendChild(gridContainer);
         }
 
+
+        window.addEventListener('load', function() {
+    const loadingScreen = document.getElementById('loading-screen');
+    const loadingImage = document.getElementById('loading-image');
+    const loadingSound = document.getElementById('loading-sound');
+
+    let isClicked = false; // Track whether the image has been clicked
+
+    // Function to hide the loading screen and show the main content
+    const hideLoadingScreen = function() {
+        loadingScreen.style.display = 'none'; // Hide loading screen
+        mainContent.style.display = 'block';  // Show main content
+    };
+
+    // Add click event listener to the first image
+    loadingImage.addEventListener('click', function() {
+        if (!isClicked) {
+            isClicked = true; // Set the flag to true so it won't trigger again
+
+            // Play sound effect
+            loadingSound.play().catch(error => {
+                console.log('Audio play was blocked, will retry after user interaction.');
+            });
+
+            // Change the image to the second one after 2 seconds
+            setTimeout(function() {
+                loadingImage.src = 'image2.jpg'; // Change image to second one
+            }, 2000); // 2000ms = 2 seconds
+
+            // Extend the loading screen by 2 more seconds (total of 2 seconds after click)
+            setTimeout(hideLoadingScreen, 2000); // Hide loading screen after 2 more seconds
+        }
+    });
+});
+
+
+const images = document.querySelectorAll('.a-column-img');
+const hoverSound = document.getElementById('hoverSound');
+
+// Add hover event to each image
+images.forEach(image => {
+  image.addEventListener('mouseenter', () => {
+    hoverSound.play(); // Play the sound when hovering
+  });
+});
+
+document.querySelectorAll('.a-column-img img').forEach(image => {
+  image.addEventListener('click', () => {
+    const sound = document.getElementById('click-sound');
+    sound.play();
+  });
+});
         
     </script>
 
