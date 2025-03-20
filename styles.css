@@ -43,7 +43,6 @@ body {
     margin: 0;
     padding: 0;
     text-shadow: 2px 2px 4px #9EB6EE;
-    border: solid white 2vw;
 }
 
 .marquee-top, .marquee-bottom, .marquee-bottom-2 {
