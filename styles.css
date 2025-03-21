@@ -4,10 +4,6 @@
     margin-top: 1vw;
     text-align: left;
     color: #9EB6EE;
-    background-color: white;
-    border: solid 0.2vw #9EB6EE;
-    border-radius: 10px;
-    padding-right: -8vw;
 }
 
 
@@ -414,15 +410,15 @@ will-change: background-position;
     text-align: left;
     color: #9EB6EE;
     cursor: pointer;
-    margin-top: -0.8vw;
+    margin-top: -0.6vw;
     text-shadow: 2px 2px 4px #9EB6EE;
     align-items: top;
     background-color: white;
-    border: solid 0.3vw #929ff0;
+    border: solid 0.3vw #9EB6EE;
     border-radius: 10px;
     animation: blink 1.7s infinite;
     padding-left: 1vw;
-    padding-top: -1.5vw;
+    padding-top: -3vw;
 }
 
 body, h1, h2, h3, h4, h5, h6, p, span, div {
