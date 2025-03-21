@@ -48,9 +48,20 @@
 
         <div id="symbol-container">
             <span class="symbol">݁₊</span>
-            <span class="symbol">⊹</span>
-            <span class="symbol">݁˖</span>
-            <span class="symbol">݁</span>
+        <span class="symbol">⊹</span>
+        <span class="symbol">݁˖</span>
+        <span class="symbol">݁</span>
+        <span class="symbol">*</span>
+        <span class="symbol">⋆</span>
+        <span class="symbol">✺</span>
+        <span class="symbol">✩</span>
+        <span class="symbol">✮</span>
+        <span class="symbol">✫</span>
+        <span class="symbol">⋯</span>
+        <span class="symbol">∗</span>
+        <span class="symbol">✼</span>
+        <span class="symbol">☆</span>
+        <span class="symbol">✴</span>
         </div>
 
 
@@ -342,22 +353,26 @@ document.querySelectorAll('.a-column-img img').forEach(image => {
 });
 
 
-const symbols = ['݁₊', '⊹', '݁˖', '݁'];
+const symbols = [
+    '݁₊', '⊹', '݁˖', '݁', '*', '⋆', '*', 
+    ':', '∗', '₊',
+];
 const symbolContainer = document.getElementById('symbol-container');
 const symbolElements = document.querySelectorAll('.symbol');
 
 // Function to shuffle the symbols in the container
 function shuffleSymbols() {
     const shuffledSymbols = [...symbols];
-    shuffledSymbols.sort(() => Math.random() - 0.5); // Random shuffle
+    // Shuffle array randomly
+    shuffledSymbols.sort(() => Math.random() - 0.5); 
 
     symbolElements.forEach((element, index) => {
         element.textContent = shuffledSymbols[index]; // Update symbol positions
     });
 }
 
-// Call shuffleSymbols every 1 second to create the animation
-setInterval(shuffleSymbols, 1000);
+// Call shuffleSymbols every 0.3 seconds to create a faster randomization effect
+setInterval(shuffleSymbols, 500);
 
         
 

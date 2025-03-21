@@ -351,7 +351,7 @@ a {
     gap: 2.5vw;
     padding: 3vw;
     width: 80vw;
-    margin-left: 4.5vw;
+    margin-left: 5vw;
 }
 
 .row-data {
@@ -395,24 +395,41 @@ body, h1, h2, h3, h4, h5, h6, p, span, div {
 
 #symbol-container {
     display: flex;
+    position: absolute;
     gap: 20px;
-    font-size: 2vw;
-    top: -20vw;
-    margin-left: 10vw;
+    font-size: 8vw;
+    top: -0.1vw;
+    left: 55vw;
+
 }
 
-.symbol {
-    animation: fadeIn 0.5s ease-in-out infinite;
+.symbol_1 {
+    animation: fadeIn 0.5s ease-in-out infinite, bounce 0.5s ease-in-out infinite;
 }
+
+.symbol_1 {
+    animation: fadeIn 0.3s ease-in-out infinite, bounce 0.8s ease-in-out infinite;
+}
+
+
 
 @keyframes fadeIn {
-    0% {
+    50% {
         opacity: 0;
     }
-    50% {
+    80% {
         opacity: 1;
     }
     100% {
         opacity: 0;
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-3px);
     }
 }
