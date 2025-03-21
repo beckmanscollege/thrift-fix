@@ -21,7 +21,7 @@
 }
 
 #loading-image {
-    width: 38vw; /* Set image size as needed */
+    width: 40vw; /* Set image size as needed */
     height: auto;
     cursor: pointer;
 }
@@ -270,8 +270,6 @@ a {
     object-fit: contain;
     filter: grayscale(0);
     border: none;
-    margin-left: 3vw;
-    margin-top: -2.5vw;
     cursor: default;
     border: solid 0.3vw #9EB6EE;
     box-shadow: 2px 2px 4px #9EB6EE;
@@ -353,9 +351,11 @@ a {
     margin-left: 4.5vw;
     border-radius: 5px;
     line-height: 9vw;
-    margin-top: -2vw; /* Increase line height */
     padding-right: 3vw;
+    margin-top: -2vw;
     background-color: white opacity 0;
+    width: 100vw;
+    font-size: 3.5vw;
 }
 
 .f-column-img {
