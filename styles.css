@@ -92,19 +92,19 @@ body {
   }
   
   .marquee-top {
-   margin-top: 25vw;
+   margin-top: 64vw;
     left: 0;
     animation: moveText 80s linear infinite;
   }
   
   .marquee-bottom {
-    margin-top: 63vw; 
+    margin-top: 136vw; 
     right: 0; 
     animation: moveTextBottom 70s linear infinite;
   }
 
   .marquee-bottom-2 {
-margin-top: 156vw;
+margin-top: 213vw;
 left: 0;
 animation: moveText 80s linear infinite;
   }
@@ -417,6 +417,18 @@ will-change: background-position;
 
 body, h1, h2, h3, h4, h5, h6, p, span, div {
     text-shadow: 2px 2px 4px #9EB6EE; /* Add drop shadow to all text */
+}
+
+.description {
+  font-size: 1.5vw;
+  font-family: "Pixelify Sans", sans-serif;
+  color: black;
+  text-align: center;
+    border-radius: 10px;
+    z-index: 100000;
+    padding-left: -2vw;
+    padding-right: -2vw;
+    padding-bottom: 2vw;
 }
 
 #symbol-container {
