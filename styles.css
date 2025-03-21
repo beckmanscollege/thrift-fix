@@ -353,10 +353,12 @@ will-change: background-position;
     border-radius: 5px;
     line-height: 9vw;
     padding-right: 3vw;
-    margin-top: -2vw;
-    background-color: white opacity 0;
+    padding-left: 2vw;
     width: 100vw;
     font-size: 3vw;
+    background-color: white;
+    border: solid 0.3vw #9EB6EE;
+    border-radius: 10px;
 }
 
 .f-column-img {
