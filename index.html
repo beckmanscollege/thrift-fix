@@ -37,12 +37,14 @@
     <div id="loading-screen">
         <!-- First Image -->
         <img id="loading-image" src="https://cdn.glitch.global/87bdc027-1100-455e-a926-b9392b3014b9/Garderob.png?v=1742501159896" alt="OPEN" />
-
+    
         <audio id="loading-sound" src="https://cdn.glitch.global/87bdc027-1100-455e-a926-b9392b3014b9/170598__alkanetexe__anime-sword-sfx%20(1).wav?v=1742475568398" preload="auto"></audio>
+    
+        <div id="loading-text">click wardrobe to open</div> <!-- Text under the first image -->
     </div>
-
+    
     <img id="second-image" src="https://cdn.glitch.global/87bdc027-1100-455e-a926-b9392b3014b9/Garderob_stor.png?v=1742504084246" alt="Second Image" style="display: none;" />
-</div>
+    
 
         <div class="title"> thrift fix </div>
 
@@ -296,6 +298,8 @@
             output.appendChild(gridContainer);
         }
 
+
+      
         window.addEventListener('load', function() {
     const loadingScreen = document.getElementById('loading-screen');
     const loadingImage = document.getElementById('loading-image');
@@ -335,7 +339,13 @@
         }
     });
 });
-    
+
+
+
+
+
+
+
 
     const images = document.querySelectorAll('.a-column-img');
 const hoverSound = document.getElementById('hoverSound');
