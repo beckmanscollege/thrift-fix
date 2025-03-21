@@ -319,10 +319,12 @@
         if (!isClicked) {
             isClicked = true; // Set the flag to true so it won't trigger again
 
-            // Play sound effect
-            loadingSound.play().catch(error => {
-                console.log('Audio play was blocked, will retry after user interaction.');
-            });
+            // Delay sound effect by 0.5 seconds
+            setTimeout(function() {
+                loadingSound.play().catch(error => {
+                    console.log('Audio play was blocked, will retry after user interaction.');
+                });
+            }, 1000); // Delay by 500ms (0.5 seconds)
 
             // Change the image to the second one after 2 seconds
             setTimeout(function() {
@@ -339,6 +341,7 @@
         }
     });
 });
+
 
 
 
