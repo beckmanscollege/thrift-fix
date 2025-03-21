@@ -412,6 +412,7 @@ will-change: background-position;
     border: solid 0.3vw #9EB6EE;
     border-radius: 10px;
     animation: blink 1.7s infinite;
+    padding-left: 1vw;
 }
 
 body, h1, h2, h3, h4, h5, h6, p, span, div {
