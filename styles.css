@@ -10,9 +10,9 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle, #d0e0f7 25%, white 50%, pink 75%, rgb(255, 141, 198) 85%);
+    background: radial-gradient(circle, #d0e0f7 25%, white 50%, pink 75%, #d0e0f7 90%);
 background-size: 550% 550%; /* Larger background to allow for gradual movement */
-animation: waveAnimation 10s linear infinite;
+animation: waveAnimation 12s linear infinite;
 will-change: background-position;
     display: flex;
     justify-content: center;
@@ -38,10 +38,10 @@ img {
 
 
 body {
-  background: radial-gradient(circle, #d0e0f7 25%, white 50%, pink 75%, rgb(255, 139, 197) 85%);
-background-size: 550% 550%; /* Larger background to allow for gradual movement */
-animation: waveAnimation 10s linear infinite;
-will-change: background-position;
+  background: radial-gradient(circle, #d0e0f7 25%, white 50%, pink 75%, #d0e0f7 90%);
+  background-size: 550% 550%; /* Larger background to allow for gradual movement */
+  animation: waveAnimation 12s linear infinite;
+  will-change: background-position;
     font-family: "Pixelify Sans", sans-serif;
     font-size: 4vw;
     color: #9EB6EE;
@@ -237,10 +237,10 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle, #d0e0f7 25%, white 50%, pink 75%, rgb(255, 144, 199) 85%);
-    background-size: 550% 550%; /* Larger background to allow for gradual movement */
-    animation: waveAnimation 10s linear infinite;
-    will-change: background-position;
+    background: radial-gradient(circle, #d0e0f7 25%, white 50%, pink 75%, #d0e0f7 90%);
+background-size: 550% 550%; /* Larger background to allow for gradual movement */
+animation: waveAnimation 12s linear infinite;
+will-change: background-position;
     z-index: 1000;
     justify-content: left;
     align-items: center;
