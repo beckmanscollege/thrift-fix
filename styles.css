@@ -76,7 +76,7 @@ body {
   }
 
   .marquee-bottom-2 {
-margin-top: 126vw;
+margin-top: 156vw;
 left: 0;
 animation: moveText 80s linear infinite;
   }
@@ -361,7 +361,7 @@ a {
 
 .f-column-img {
     animation: blink 1.5s infinite;
-    width: 20vw;
+    width:18vw;
     margin-left: 1.5vw;
     margin-top: -1.2vw;
 }
@@ -369,7 +369,7 @@ a {
 .sort-text {
     grid-column: span 2;
     font-family: 'Pixelify Sans', sans-serif;
-    font-size: 9vw;
+    font-size: 8vw;
     text-align: left;
     color: #9EB6EE;
     cursor: pointer;
