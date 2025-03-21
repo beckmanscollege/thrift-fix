@@ -324,11 +324,11 @@
             setTimeout(function() {
                 loadingImage.src = 'https://cdn.glitch.global/87bdc027-1100-455e-a926-b9392b3014b9/Garderob_stor.png?v=1742504084246'; // Change image to second one
                 loadingImage.style.transition = "opacity 1s ease"; // Optional: Add smooth fade transition
-                loadingImage.style.opacity = 0; // Fade out before switching image
+                loadingImage.style.opacity = 1; // Fade out before switching image
                 setTimeout(function() {
                     loadingImage.style.opacity = 1; // Fade back in after switching
-                }, 300); // Fade-in after image change (1 second)
-            }, 2000); // 2000ms = 2 seconds
+                }, 200); // Fade-in after image change (1 second)
+            }, 1200); // 2000ms = 2 seconds
 
             // Extend the loading screen by 2 more seconds (total of 2 seconds after click)
             setTimeout(hideLoadingScreen, 4000); // Hide loading screen after 2 more seconds (total 4 seconds)
