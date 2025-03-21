@@ -28,6 +28,7 @@
   height: auto;
   cursor: pointer;
   transition: opacity 1s ease; /* Smooth transition for the opacity */
+  margin-top: -2vw;
 }
 
 #loading-text {
@@ -43,6 +44,7 @@
     border-radius: 10px;
     padding-right: 1vw;
     padding-left: 1vw;
+    margin-top: 1vw;
 }
 
 #second-image {
@@ -420,7 +422,7 @@ body, h1, h2, h3, h4, h5, h6, p, span, div {
 }
 
 .description {
-  font-size: 1.5vw;
+  font-size: 1.8vw;
   font-family: "Pixelify Sans", sans-serif;
   color: black;
   text-align: center;
