@@ -16,14 +16,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 9999;
+    z-index: 100000;
     transition: opacity 0.5s ease;
 }
 
 #loading-image {
-    width: 30vw; /* Set image size as needed */
+    width: 38vw; /* Set image size as needed */
     height: auto;
-    cursor: pointer; /* Make it clear it's clickable */
+    cursor: pointer;
+}
+
+#second-image {
+width: 38vw;
+z-index: 9999;
 }
 
 img {
@@ -224,11 +229,6 @@ a {
     text-shadow: 2px 2px 4px #9EB6EE; /* Add drop shadow to all text */
 }
 
-a:hover {
-    color: #7A93DB;
-    border-bottom: 1px solid #9EB6EE;
-}
-
 /* Modal styles */
 .modal {
     display: none;
@@ -275,6 +275,7 @@ a:hover {
     border: solid 0.3vw #9EB6EE;
     box-shadow: 2px 2px 4px #9EB6EE;
     border-radius: 10px;
+
 }
 
 /* Column-specific styling */
@@ -329,11 +330,6 @@ a:hover {
     }
     
     
-    img {
-        max-width: 60px;
-        max-height: 60px;
-    }
-    
     
     td, th {
         padding: 3px;
@@ -386,10 +382,37 @@ a:hover {
     cursor: pointer;
     margin-top: -0.8vw;
     text-shadow: 2px 2px 4px #9EB6EE;
-    animation: color-change 1.5s infinite;
     align-items: top;
+    cursor: pointer;
+    background-color: white;
+    border: solid 0.3vw #9EB6EE;
+    border-radius: 10px;
 }
 
 body, h1, h2, h3, h4, h5, h6, p, span, div {
     text-shadow: 2px 2px 4px #9EB6EE; /* Add drop shadow to all text */
+}
+
+#symbol-container {
+    display: flex;
+    gap: 20px;
+    font-size: 2vw;
+    top: -20vw;
+    margin-left: 10vw;
+}
+
+.symbol {
+    animation: fadeIn 0.5s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }

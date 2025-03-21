@@ -35,12 +35,23 @@
 <body>
 
     <div id="loading-screen">
+        <!-- First Image -->
         <img id="loading-image" src="https://cdn.glitch.global/87bdc027-1100-455e-a926-b9392b3014b9/Garderob.png?v=1742501159896" alt="OPEN" />
 
         <audio id="loading-sound" src="https://cdn.glitch.global/87bdc027-1100-455e-a926-b9392b3014b9/170598__alkanetexe__anime-sword-sfx%20(1).wav?v=1742475568398" preload="auto"></audio>
     </div>
 
-        <div class="title"> thrift fix . ݁₊ ⊹ . ݁˖ .</div>
+    <img id="second-image" src="https://cdn.glitch.global/87bdc027-1100-455e-a926-b9392b3014b9/Garderob_stor.png?v=1742504084246" alt="Second Image" style="display: none;" />
+</div>
+
+        <div class="title"> thrift fix </div>
+
+        <div id="symbol-container">
+            <span class="symbol">݁₊</span>
+            <span class="symbol">⊹</span>
+            <span class="symbol">݁˖</span>
+            <span class="symbol">݁</span>
+        </div>
 
 
     <div class="marquee-top">
@@ -274,37 +285,40 @@
             output.appendChild(gridContainer);
         }
 
-
         window.addEventListener('load', function() {
         const loadingScreen = document.getElementById('loading-screen');
         const loadingImage = document.getElementById('loading-image');
+        const secondImage = document.getElementById('second-image'); // Get the second image
         const loadingSound = document.getElementById('loading-sound');
-
+        
         let isClicked = false; // Track whether the image has been clicked
 
-        // Function to hide the loading screen and show the main content
+        // Function to hide the loading screen
         const hideLoadingScreen = function() {
-            loadingScreen.style.display = 'none'; // Hide loading screen
+            loadingScreen.style.display = 'none'; // Hide the entire loading screen
         };
 
         // Add click event listener to the first image
         loadingImage.addEventListener('click', function() {
             if (!isClicked) {
-                isClicked = true; // Set the flag to true so it won't trigger again
+                isClicked = true; // Set the flag to true to prevent multiple clicks
 
-                // Play sound effect
+                // Play sound effect on click
                 loadingSound.play().catch(error => {
                     console.log('Audio play was blocked, will retry after user interaction.');
                 });
 
-                // Change the image to the second one after 2 seconds
-                setTimeout(function() {
-                    console.log("Changing image..."); // Log to confirm timeout runs
-                    loadingImage.src = 'https://your-second-image-url.com/second-image.jpg'; // Replace with your actual second image URL
-                }, 2000); // 2000ms = 2 seconds
+                // Hide the first image immediately when clicked
+                loadingImage.style.display = 'none'; // Hide first image
 
-                // Extend the loading screen by 2 more seconds (total of 2 seconds after click)
-                setTimeout(hideLoadingScreen, 2000); // Hide loading screen after 2 more seconds
+                // Show the second image immediately
+                secondImage.style.display = 'block'; // Show second image
+
+                // Hide the second image and the loading screen after 2 seconds
+                setTimeout(function() {
+                    secondImage.style.display = 'none'; // Hide second image
+                    hideLoadingScreen(); // Hide loading screen after 2 seconds
+                }, 2000); // Wait for 2 seconds before hiding everything
             }
         });
     });
@@ -327,6 +341,23 @@ document.querySelectorAll('.a-column-img img').forEach(image => {
   });
 });
 
+
+const symbols = ['݁₊', '⊹', '݁˖', '݁'];
+const symbolContainer = document.getElementById('symbol-container');
+const symbolElements = document.querySelectorAll('.symbol');
+
+// Function to shuffle the symbols in the container
+function shuffleSymbols() {
+    const shuffledSymbols = [...symbols];
+    shuffledSymbols.sort(() => Math.random() - 0.5); // Random shuffle
+
+    symbolElements.forEach((element, index) => {
+        element.textContent = shuffledSymbols[index]; // Update symbol positions
+    });
+}
+
+// Call shuffleSymbols every 1 second to create the animation
+setInterval(shuffleSymbols, 1000);
 
         
 
