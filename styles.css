@@ -342,6 +342,7 @@ a {
     padding: 3vw;
     width: 80vw;
     margin-left: 5vw;
+    margin-top: -0.5vw;
 }
 
 .row-data {
@@ -355,7 +356,7 @@ a {
     margin-top: -2vw;
     background-color: white opacity 0;
     width: 100vw;
-    font-size: 3.5vw;
+    font-size: 3vw;
 }
 
 .f-column-img {
