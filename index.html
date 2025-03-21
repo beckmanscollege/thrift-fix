@@ -297,56 +297,66 @@
         }
 
         window.addEventListener('load', function() {
-        const loadingScreen = document.getElementById('loading-screen');
-        const loadingImage = document.getElementById('loading-image');
-        const secondImage = document.getElementById('second-image'); // Get the second image
-        const loadingSound = document.getElementById('loading-sound');
-        
-        let isClicked = false; // Track whether the image has been clicked
+    const loadingScreen = document.getElementById('loading-screen');
+    const loadingImage = document.getElementById('loading-image');
+    const loadingSound = document.getElementById('loading-sound');
+    const mainContent = document.getElementById('main-content');
 
-        // Function to hide the loading screen
-        const hideLoadingScreen = function() {
-            loadingScreen.style.display = 'none'; // Hide the entire loading screen
-        };
+    let isClicked = false; // Track whether the image has been clicked
 
-        // Add click event listener to the first image
-        loadingImage.addEventListener('click', function() {
-            if (!isClicked) {
-                isClicked = true; // Set the flag to true to prevent multiple clicks
+    // Function to hide the loading screen and show the main content
+    const hideLoadingScreen = function() {
+        loadingScreen.style.display = 'none'; // Hide loading screen
+        mainContent.style.display = 'block';  // Show main content
+    };
 
-                // Play sound effect on click
-                loadingSound.play().catch(error => {
-                    console.log('Audio play was blocked, will retry after user interaction.');
-                });
+    // Add click event listener to the first image
+    loadingImage.addEventListener('click', function() {
+        if (!isClicked) {
+            isClicked = true; // Set the flag to true so it won't trigger again
 
-                // Hide the first image immediately when clicked
-                loadingImage.style.display = 'none'; // Hide first image
+            // Play sound effect
+            loadingSound.play().catch(error => {
+                console.log('Audio play was blocked, will retry after user interaction.');
+            });
 
-                // Show the second image immediately
-                secondImage.style.display = 'block'; // Show second image
-
-                // Hide the second image and the loading screen after 2 seconds
+            // Change the image to the second one after 2 seconds
+            setTimeout(function() {
+                loadingImage.src = 'https://cdn.glitch.global/87bdc027-1100-455e-a926-b9392b3014b9/Garderob_stor.png?v=1742504084246'; // Change image to second one
+                loadingImage.style.transition = "opacity 1s ease"; // Optional: Add smooth fade transition
+                loadingImage.style.opacity = 0; // Fade out before switching image
                 setTimeout(function() {
-                    secondImage.style.display = 'none'; // Hide second image
-                    hideLoadingScreen(); // Hide loading screen after 2 seconds
-                }, 2000); // Wait for 2 seconds before hiding everything
-            }
-        });
+                    loadingImage.style.opacity = 1; // Fade back in after switching
+                }, 300); // Fade-in after image change (1 second)
+            }, 2000); // 2000ms = 2 seconds
+
+            // Extend the loading screen by 2 more seconds (total of 2 seconds after click)
+            setTimeout(hideLoadingScreen, 4000); // Hide loading screen after 2 more seconds (total 4 seconds)
+        }
     });
+});
+    
 
-
-const images = document.querySelectorAll('.a-column-img');
+    const images = document.querySelectorAll('.a-column-img');
 const hoverSound = document.getElementById('hoverSound');
 
 // Add hover event to each image
 images.forEach(image => {
   image.addEventListener('mouseenter', () => {
+    console.log("Mouse entered image");
     hoverSound.play(); // Play the sound when hovering
+    image.classList.add('hover'); // Add hover class dynamically
+  });
+
+  image.addEventListener('mouseleave', () => {
+    image.classList.remove('hover'); // Remove hover class when leaving
   });
 });
 
+// Add click event to each image
 document.querySelectorAll('.a-column-img img').forEach(image => {
   image.addEventListener('click', () => {
+    console.log("Image clicked");
     const sound = document.getElementById('click-sound');
     sound.play();
   });

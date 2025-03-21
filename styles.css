@@ -336,15 +336,6 @@ a {
     }
 }
 
-.a-column-img.clicked {
-    border: 2px solid #000;
-    padding-bottom: 20px;
-}
-
-.a-column-img.hover {
-    width: 120%
-}
-
 .image-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
